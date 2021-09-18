@@ -1,3 +1,4 @@
+
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement){
         this.previousOperandTextElement = previousOperandTextElement
@@ -53,7 +54,10 @@ class Calculator {
           case '÷':
             computation = prev / current
             break
-     
+          case 'x^y':
+                computation = Math.pow(prev, current)
+                break    
+       
           default:
             return
         }
@@ -82,6 +86,18 @@ class Calculator {
           case '1/x':
             computation2 = 1/ prev2 
             break
+          case 'log10':
+            computation2 = Math.log10(prev2)
+            break
+
+          case '|x|':
+                computation2 = Math.abs(prev2)
+                break    
+          case '10^x':
+                computation2 = Math.pow(10,prev2)
+                break 
+    
+          
           default:
             return
         }
@@ -120,7 +136,7 @@ class Calculator {
      
               if(this.operation === '1/x'){
                 this.previousOperandTextElement.innerText =
-                `${'1/(' + this.previousOperand + ')'}`
+                `${'1/(' + this.previousOperand }`
               }else if(this.operation === '%'){
                 this.previousOperandTextElement.innerText =
                 `${this.previousOperand + '%'}`
@@ -131,8 +147,20 @@ class Calculator {
               } else if(this.operation === '√'){
                 this.previousOperandTextElement.innerText =
                 `${'√(' + this.previousOperand + ')'}`
+              } else if(this.operation === 'log10'){
+                this.previousOperandTextElement.innerText =
+                `${'log(' + this.previousOperand + ')'  }`
+              }else if(this.operation === '|x|'){
+                this.previousOperandTextElement.innerText =
+                `${'abs(' + this.previousOperand + ')'  }`
+              }else if(this.operation === 'x^y'){
+                this.previousOperandTextElement.innerText =
+                `${ this.previousOperand +'^'  }`
+              }else if(this.operation === '10^x'){
+                this.previousOperandTextElement.innerText =
+                `${ '10 ^ (' + this.previousOperand +')'  }`
               }
-      
+              
           }
         } else {
           this.previousOperandTextElement.innerText = ''
