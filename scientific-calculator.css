@@ -8,8 +8,8 @@ body{
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(6, 100px);
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(7, 100px);
 }
 
 
@@ -53,9 +53,10 @@ button {
     background-color: #4CAF50;
     color: white;
   }
+
   .operations{
-    background-color: grey;
-}
+      background-color: grey;
+  }
 
 
 .all-clear{
@@ -64,8 +65,6 @@ button {
 
 .equals{
     grid-column: span 2;
-    background-color: grey;
-
 }
 
 .previous-operand{
