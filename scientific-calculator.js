@@ -96,6 +96,8 @@ class Calculator {
           case '10^x':
                 computation2 = Math.pow(10,prev2)
                 break 
+
+            
     
           
           default:
