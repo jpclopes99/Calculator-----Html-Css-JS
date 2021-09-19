@@ -4,6 +4,7 @@ class Calculator {
         this.previousOperandTextElement = previousOperandTextElement
         this.currentOperandTextElement = currentOperandTextElement
         this.clear()
+        
     }
 
     clear(){
@@ -64,9 +65,17 @@ class Calculator {
         this.currentOperand = computation
         this.operation = undefined
         this.previousOperand = ''
-      }
-
-
+    }
+    
+    /*
+    permutation(number){
+        let p
+        while(number > 0){
+            p = number * (number-1)
+            number--
+        }
+        return p
+    }*/
 
 
       compute2() {
@@ -96,7 +105,10 @@ class Calculator {
           case '10^x':
                 computation2 = Math.pow(10,prev2)
                 break 
-
+          /*case 'n!':
+                computation2 = permutation(prev2)
+                break */
+       
             
     
           
@@ -107,7 +119,13 @@ class Calculator {
         this.operation = undefined
         this.previousOperand = ''
       }
+
     
+
+
+
+
+
 
       getDisplayNumber(number){
           const numberString = number.toString()
@@ -161,7 +179,20 @@ class Calculator {
               }else if(this.operation === '10^x'){
                 this.previousOperandTextElement.innerText =
                 `${ '10 ^ (' + this.previousOperand +')'  }`
+              }else if(this.operation === 'n!'){
+                this.previousOperandTextElement.innerText =
+                `${ 'fact(' + this.previousOperand +')'  }`
+              }else if(this.operation === 'exp'){
+                this.previousOperandTextElement.innerText =
+                `${this.previousOperand + "," + this.operation + " + " }`
+              }else if(this.operation === 'mod'){
+                this.previousOperandTextElement.innerText =
+                `${this.previousOperand + this.operation}`
+              }else if(this.operation === 'ln'){
+                this.previousOperandTextElement.innerText =
+                `${ 'ln(' + this.previousOperand +')'  }`
               }
+              
               
           }
         } else {
