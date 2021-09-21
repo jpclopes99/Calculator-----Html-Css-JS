@@ -1,2 +1,2 @@
-# Calculator (In Progress)
-Calculator in Html, Css, JavaScript
+# Calculator 
+Calculator in Html, Css, JavaScript - (In Progress)
