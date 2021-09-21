@@ -67,16 +67,7 @@ class Calculator {
         this.previousOperand = ''
     }
     
-    /*
-    permutation(number){
-        let p
-        while(number > 0){
-            p = number * (number-1)
-            number--
-        }
-        return p
-    }*/
-
+  
 
       compute2() {
         let computation2
@@ -105,11 +96,10 @@ class Calculator {
           case '10^x':
                 computation2 = Math.pow(10,prev2)
                 break 
-          /*case 'n!':
-                computation2 = permutation(prev2)
-                break */
-       
-            
+          case 'sin':
+                computation2 = Math.sin(prev2)
+                break 
+      
     
           
           default:
@@ -179,18 +169,15 @@ class Calculator {
               }else if(this.operation === '10^x'){
                 this.previousOperandTextElement.innerText =
                 `${ '10 ^ (' + this.previousOperand +')'  }`
-              }else if(this.operation === 'n!'){
+              }else if(this.operation === 'cos'){
                 this.previousOperandTextElement.innerText =
-                `${ 'fact(' + this.previousOperand +')'  }`
-              }else if(this.operation === 'exp'){
+                `${ 'cos(' + this.previousOperand +')'  }`
+              }else if(this.operation === 'sin'){
                 this.previousOperandTextElement.innerText =
-                `${this.previousOperand + "," + this.operation + " + " }`
-              }else if(this.operation === 'mod'){
+                `${ 'sin(' + this.previousOperand +')'  }`
+              }else if(this.operation === 'tan'){
                 this.previousOperandTextElement.innerText =
-                `${this.previousOperand + this.operation}`
-              }else if(this.operation === 'ln'){
-                this.previousOperandTextElement.innerText =
-                `${ 'ln(' + this.previousOperand +')'  }`
+                `${ 'tan(' + this.previousOperand +')'  }`
               }
               
               
